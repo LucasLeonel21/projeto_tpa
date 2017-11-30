@@ -8,9 +8,9 @@ import app.models.Pessoa;
 
 public class PessoasController extends AppController{
 	public void index(){
-		String smartcard = request.getParameter('smartcart');
-		String password = request.getParameter('password');
+		String smartcard = request.getParameter("smartcart");
+		String password = request.getParameter("password");
 		
-		out.print(smartcard + ' ' + password);
+		out.print(smartcard + " " + password);
 	}
 }
