@@ -7,13 +7,13 @@
 <@form action="create" method="post">
     <table style="margin:30px">
         <tr>
-            <td>Person Name</td>
+            <td>Nome Pessoa</td>
             <td><input type="text" name="name" value="${(flasher.params.name)!}"> *
                             <span class="error">${(flasher.errors.name)!}</span>
             </td>
         </tr>
         <tr>
-            <td>Person Last Name:</td>
+            <td>Sobrenome Pessoa:</td>
             <td><input type="text" name="last_name" value="${(flasher.params.last_name)!}"> *
                             <span class="error">${(flasher.errors.last_name)!}</span>
             </td>
@@ -23,6 +23,3 @@
         </tr>
     </table>
 </@form>
-
-
-

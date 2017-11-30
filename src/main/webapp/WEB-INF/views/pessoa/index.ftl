@@ -9,12 +9,12 @@
 		<td>Edit</td>
 	</tr>
 
-	<#list persons as person>
+	<#list pessoas as pessoa>
 		<tr>
-			<td>${person.name}</td>
-			<td>${person.last_name}</td>
+			<td>${pessoa.name}</td>
+			<td>${pessoa.last_name}</td>
 			<td>
-				<@form id=person.id action="delete" method="delete" html_id=person.id>
+				<@form id=pessoa.id action="delete" method="delete" html_id=pessoa.id>
 					<button type="submit">Delete</button>
 				</@form>
 			</td>

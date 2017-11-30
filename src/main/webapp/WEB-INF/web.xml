@@ -19,7 +19,7 @@
         </init-param>
         <init-param>
             <param-name>root_controller</param-name>
-            <param-value>person</param-value>
+            <param-value>pessoa</param-value>
         </init-param>
     </filter>
 

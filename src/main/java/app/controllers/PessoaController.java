@@ -3,25 +3,25 @@ package app.controllers;
 import org.javalite.activeweb.AppController;
 import org.javalite.activeweb.annotations.POST;
 import org.javalite.activeweb.annotations.DELETE;
-import app.models.Person;
+import app.models.Pessoa;
 
-public class PersonController extends AppController{
+public class PessoaController extends AppController{
 	public void index(){
-		view("persons", Person.findAll());
+		view("pessoas", Pessoa.findAll());
 	}
 
 	public void show(){}
 
 	@POST
 	public void create(){
-		Person person = new Person();
-		if(!person.save()){
+		Pessoa pessoa = new Person();
+		if(!pessoa.save()){
 			flash("message", "Algo deu errado");
-			flash("errors", person.errors());
-			redirect(PersonController.class, "new_form");
+			flash("errors", pessoa.errors());
+			redirect(PessoaController.class, "new_form");
 		}else{
-			flash("message", "Nova pessoa adicionada: " + person.get("name"));
-			redirect(PersonController.class);
+			flash("message", "Nova pessoa adicionada: " + pessoa.get("name"));
+			redirect(PessoaController.class);
 		}
 	}
 
@@ -31,7 +31,7 @@ public class PersonController extends AppController{
 		String name = p.getString("name");
 		p.delete();
 		flash("message", "Pessoa '" + name + "' foi deletada");
-		redirect(PersonController.class); 
+		redirect(PersonController.class);
 	}
 
 	public void newForm(){}
