@@ -14,7 +14,7 @@ public class PessoaController extends AppController{
 
 	@POST
 	public void create(){
-		Pessoa pessoa = new Person();
+		Pessoa pessoa = new Pessoa();
 		if(!pessoa.save()){
 			flash("message", "Algo deu errado");
 			flash("errors", pessoa.errors());
@@ -27,11 +27,11 @@ public class PessoaController extends AppController{
 
 	@DELETE
 	public void delete(){
-		Person p = (Person)Person.findById(getId());
+		Pessoa p = (Pessoa)Pessoa.findById(getId());
 		String name = p.getString("name");
 		p.delete();
 		flash("message", "Pessoa '" + name + "' foi deletada");
-		redirect(PersonController.class);
+		redirect(PessoaController.class);
 	}
 
 	public void newForm(){}
