@@ -1,6 +1,6 @@
-<@content for="title">Pagina Inicial</@content>
+<@content for="title">Pessoas</@content>
 
-<@link_to action="new_form">Add nova pessoa.</@link_to>
+<@link_to action="new_form">Cadastrar Pessoa</@link_to>
 
 <table>
 	<tr>

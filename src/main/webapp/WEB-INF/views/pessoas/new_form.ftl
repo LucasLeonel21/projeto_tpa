@@ -8,13 +8,13 @@
     <table style="margin:30px">
         <tr>
             <td>Nome Pessoa</td>
-            <td><input type="text" name="name" value=""> *
+            <td><input type="text" name="name" value="${(flasher.params.name)!}"> *
                             <span class="error">${(flasher.errors.name)!}</span>
             </td>
         </tr>
         <tr>
             <td>Sobrenome Pessoa:</td>
-            <td><input type="text" name="last_name" value=""> *
+            <td><input type="text" name="last_name" value="${(flasher.params.last_name)!}"> *
                             <span class="error">${(flasher.errors.last_name)!}</span>
             </td>
 

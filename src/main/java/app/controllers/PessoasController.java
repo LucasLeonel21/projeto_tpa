@@ -16,10 +16,14 @@ public class PessoasController extends AppController{
 	@POST
 	public void create(){
 		Pessoa pessoa = new Pessoa();
+		//pessoa.set("name","Nikolas");
+		//pessoa.set("last_name","Lencioni");
+		pessoa.fromMap(params1st());
 
-		if(!pessoa.save()){
+		if(!pessoa.saveIt()){
 			flash("message", "Algo deu errado");
 			flash("errors", pessoa.errors());
+			flash("params", params1st());
 			redirect(PessoasController.class, "new_form");
 		}else{
 			flash("message", "Nova pessoa adicionada: " + pessoa.get("name"));
