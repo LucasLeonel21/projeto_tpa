@@ -1,18 +1,35 @@
 package app.controllers;
 
-import javax.servlet.http.HttpServletRequest;
-
+import java.util.List;
 import java.time.LocalDateTime;
+import org.javalite.http.Http;
 import org.javalite.activeweb.AppController;
 import org.javalite.activeweb.annotations.POST;
 import org.javalite.activeweb.annotations.DELETE;
 import app.models.Pessoa;
 
 public class PessoasController extends AppController{
-	public void index(HttpServletRequest request) throws ServletException, IOException {
-		String smartcard = request.getParameter("smartcart");
-		String password = request.getParameter("password");
+
+	@POST
+	public void index(){
+		String smartcard = param("smartcard");
+		String password = param("password");
 		
-		System.out.print(smartcard + " " + password);
+		Pessoa pessoa = Pessoa.findFirst("smartcard = ?", smartcard);
+		boolean travado = (boolean)pessoa.get("trava");
+		String password_check = (String)pessoa.get("password");
+		if (password_check.equals(password)){
+			if(travado){
+				/*Http.get("http://10.10.117.147$1");*/
+				pessoa.set("trava", false).saveIt();	
+				respond("Destravado:  pass").contentType("text/html");
+			}else{
+				pessoa.set("trava", true).saveIt();
+				respond("Travado: you shall not pass").contentType("text/html");		
+				
+			}
+		}else{
+			respond(password_check + "/" + password).contentType("text/html");
+		};
 	}
 }
