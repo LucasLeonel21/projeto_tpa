@@ -1,10 +1,10 @@
 /home/pi/Desktop/ProjetoTPA/src/main/java/app/services/GreeterImpl.java
-/home/pi/Desktop/ProjetoTPA/src/main/java/app/controllers/PersonController.java
 /home/pi/Desktop/ProjetoTPA/src/main/java/app/services/Greeter.java
+/home/pi/Desktop/ProjetoTPA/src/main/java/app/controllers/PessoasController.java
 /home/pi/Desktop/ProjetoTPA/src/main/java/app/websockets/EchoServer.java
 /home/pi/Desktop/ProjetoTPA/src/main/java/app/config/FreeMarkerConfig.java
 /home/pi/Desktop/ProjetoTPA/src/main/java/app/config/DbConfig.java
 /home/pi/Desktop/ProjetoTPA/src/main/java/app/services/GreeterModule.java
-/home/pi/Desktop/ProjetoTPA/src/main/java/app/models/Person.java
+/home/pi/Desktop/ProjetoTPA/src/main/java/app/models/Pessoa.java
 /home/pi/Desktop/ProjetoTPA/src/main/java/app/config/AppControllerConfig.java
 /home/pi/Desktop/ProjetoTPA/src/main/java/app/config/AppBootstrap.java

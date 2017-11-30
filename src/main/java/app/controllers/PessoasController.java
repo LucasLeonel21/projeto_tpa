@@ -16,8 +16,7 @@ public class PessoasController extends AppController{
 	@POST
 	public void create(){
 		Pessoa pessoa = new Pessoa();
-		pessoa.created_at = LocalDateTime.now();
-		pessoa.updated_at = LocalDateTime.now();
+
 		if(!pessoa.save()){
 			flash("message", "Algo deu errado");
 			flash("errors", pessoa.errors());
