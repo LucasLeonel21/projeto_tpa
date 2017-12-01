@@ -1,4 +1,3 @@
-app/websockets/EchoServer.class
 app/config/AppControllerConfig.class
 app/services/Greeter.class
 app/services/GreeterModule.class
