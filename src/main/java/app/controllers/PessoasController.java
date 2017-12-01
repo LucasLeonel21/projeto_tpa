@@ -1,7 +1,6 @@
 package app.controllers;
 
 import org.javalite.http.Http;
-import org.javalite.http.Get;
 import org.javalite.activeweb.AppController;
 import org.javalite.activeweb.annotations.POST;
 import org.javalite.activeweb.annotations.GET;
@@ -21,16 +20,17 @@ public class PessoasController extends AppController{
 		String password_check = (String)pessoa.get("password");
 		if (password_check.equals(password)){
 			if(travado){
-				
-				Get get = Http.get("http:/"+"/"+"10.10.113.175/?$1");
-				System.out.println(get);
-				pessoa.set("trava", false).saveIt();	
-				respond("Destravado:  pass").contentType("text/html");
+				Http.get("http:/"+"/"+"10.10.113.50/$0");
+				/*redirect("http:/"+"/"+"10.10.113.45:8080/teste");
+				redirect("https:/"+"/"+"google.com");*/
+				pessoa.set("trava", false).saveIt();
+				respond("Destravado: pass").contentType("text/html");
 			}else{
-				Get get = Http.get("http:/"+"/"+"10.10.113.175/?$0");
-				System.out.println(get);
+				Http.get("http:/"+"/"+"10.10.113.50/$1");
+				/*redirect("http:/"+"/"+"10.10.113.45:8080/teste");
+				Get get = Http.get("http:/"+"/"+"10.10.113.175/?$0");*/
 				pessoa.set("trava", true).saveIt();
-				respond("Travado: you shall not pass").contentType("text/html");		
+				respond("Travado: you shall not pass").contentType("text/html");
 				
 			}
 		}else{
